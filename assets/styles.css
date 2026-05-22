@@ -209,7 +209,7 @@ p { margin: 0; }
 }
 
 /* Case section image */
-.case-section .wrap a { display: block; }
+.case-section .wrap a:not(.cta) { display: block; }
 .case-section img { width: 100%; height: auto; display: block; }
 
 /* --- Hero ------------------------------------------------ */
