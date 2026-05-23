@@ -967,6 +967,19 @@ p { margin: 0; }
   box-shadow: 0 16px 32px rgba(0,0,0,0.15);
 }
 .cta-band .cta .arrow { background: var(--pink-100); color: var(--pink-600); }
+@media (max-width: 640px) {
+  .cta-band .cta {
+    display: flex;
+    width: calc(100% - 40px);
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    padding: 0 22px 0 26px;
+    height: 58px;
+  }
+}
 
 /* --- Footer ---------------------------------------------- */
 .site-footer {
@@ -1090,6 +1103,173 @@ p { margin: 0; }
 }
 .countdown-band.ended .countdown { opacity: 0.5; }
 .countdown-band.ended .end::after { content: "（終了しました）"; color: var(--ink-400); }
+
+/* --- Treatment Menu Cards (LP① たるみ取り) --------------- */
+.treat-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.treat-menu-card {
+  position: relative;
+  background: #fff;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line-soft);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(216, 97, 135, 0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.treat-menu-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(216, 97, 135, 0.16); }
+.treat-menu-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pink-200), var(--pink-accent), var(--pink-200));
+}
+.treat-menu-card--main::before {
+  height: 5px;
+  background: linear-gradient(90deg, #d86187, var(--pink-accent), #f4a0bb);
+}
+.treat-menu-rec {
+  position: absolute;
+  top: 5px; right: 18px;
+  background: linear-gradient(135deg, #d86187, var(--pink-accent));
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  padding: 4px 14px;
+  border-radius: 0 0 8px 8px;
+  white-space: nowrap;
+}
+.treat-menu-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 26px 0;
+}
+.treat-no {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--pink-100);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.treat-type {
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.treat-type--light {
+  background: var(--bg-pink);
+  color: var(--pink-accent);
+  border: 1px solid var(--pink-200);
+}
+.treat-type--dark {
+  background: var(--ink-900);
+  color: #fff;
+}
+.treat-menu-body { padding: 16px 26px 28px; }
+.treat-menu-name {
+  font-family: var(--serif);
+  font-size: 21px;
+  color: var(--ink-900);
+  line-height: 1.4;
+  margin-top: 12px;
+  letter-spacing: 0.03em;
+}
+.treat-menu-sub {
+  font-family: var(--serif);
+  font-size: 12px;
+  color: var(--ink-500);
+  letter-spacing: 0.1em;
+  margin-top: 5px;
+}
+.treat-menu-dt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-500);
+  background: var(--bg-soft);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-pill);
+  padding: 4px 14px;
+  letter-spacing: 0.05em;
+}
+.treat-menu-dt::before { content: "⏱"; font-size: 11px; }
+.treat-fit-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.treat-fit-list li {
+  display: flex;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 13.5px;
+  color: var(--ink-700);
+  line-height: 1.6;
+  border-bottom: 1px solid var(--line-soft);
+}
+.treat-fit-list li:last-child { border-bottom: none; }
+.treat-fit-list li::before {
+  content: "✓";
+  color: var(--pink-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.treat-price-block {
+  margin-top: 20px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line-soft);
+}
+.treat-price-reg {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink-400);
+}
+.treat-price-camp {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.treat-off-badge {
+  background: linear-gradient(135deg, #d86187, var(--pink-accent));
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.treat-camp-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--pink-accent);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.treat-camp-tax { font-size: 11px; color: var(--ink-500); }
+@media (max-width: 880px) {
+  .treat-menu { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 640px) {
+  .treat-menu-head { padding: 18px 20px 0; }
+  .treat-no { font-size: 28px; }
+  .treat-menu-body { padding: 14px 20px 24px; }
+  .treat-menu-name { font-size: 18px; }
+  .treat-camp-num { font-size: 28px; }
+}
 
 /* --- Sticky bottom CTA (mobile) -------------------------- */
 .sticky-cta {
