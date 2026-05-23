@@ -44,10 +44,13 @@
 
 <!-- ============== Campaign Notice Bar ============== -->
 <div class="campaign-bar">
-  <span class="campaign-bar-badge">6月限定</span>
-  <span class="campaign-bar-text">全4施術 <strong>50% OFF</strong> キャンペーン実施中</span>
-  <span class="campaign-bar-period">〜 2026年6月30日（火）まで</span>
-  <a href="https://www.suzu-clinic.com/counseling/" class="campaign-bar-cta" target="_blank" rel="noopener">今すぐ予約 ›</a>
+  <div class="campaign-bar-inner">
+    <div class="campaign-bar-top">
+      <span class="campaign-bar-badge">6月限定 50%OFF</span>
+      <span class="campaign-bar-text">全4施術 <strong>キャンペーン実施中</strong> <span class="campaign-bar-period">〜 2026年6月30日（火）まで</span></span>
+    </div>
+    <a href="https://www.suzu-clinic.com/counseling/" class="campaign-bar-cta" target="_blank" rel="noopener">今すぐ無料カウンセリングを予約 ›</a>
+  </div>
 </div>
 
 <!-- ============== About the procedure (image) ============== -->
@@ -175,10 +178,10 @@
 
 
 <!-- ============== Inline CTA after strengths ============== -->
-<div style="text-align:center; padding:40px 20px; background:var(--bg-pink);">
+<div class="cta-center" style="padding:40px 20px; background:var(--bg-pink);">
   <p style="font-family:var(--serif); font-size:16px; color:var(--ink-700); margin-bottom:16px;">まずは無料カウンセリングで、最適な施術をご提案します。</p>
   <a href="https://www.suzu-clinic.com/counseling/" class="cta" target="_blank" rel="noopener">無料カウンセリングはこちら<span class="arrow">›</span></a>
-  <p style="margin-top:10px; font-size:12px; color:var(--ink-400);">カウンセリング無料・契約不要・6月中は全施術50%OFF</p>
+  <p class="cta-micro">カウンセリング完全無料 ・ 契約不要 ・ 6月中は全施術50%OFF</p>
 </div>
 
 <!-- ============== Before/After cases ============== -->
@@ -255,7 +258,8 @@
       <div class="seg"><span class="num" data-cd="s">00</span><span class="lbl">秒</span></div>
     </div>
     <div class="cta-wrap">
-      <a href="#contact" class="cta">無料カウンセリングはこちら<span class="arrow">›</span></a>
+      <a href="https://www.suzu-clinic.com/counseling/" class="cta" target="_blank" rel="noopener">今すぐ無料カウンセリングを予約<span class="arrow">›</span></a>
+      <p class="cta-micro" style="color:var(--pink-600);">カウンセリング完全無料 ・ 契約不要 ・ 当日施術可</p>
     </div>
   </div>
 </section>
@@ -474,9 +478,17 @@
   <div class="wrap inner">
     <h2>口元の印象を、<br />数ミリの精度で変える。</h2>
     <p>まずは無料カウンセリングで、最適な短縮量をご相談ください。</p>
-    <a href="https://www.suzu-clinic.com/counseling/" class="cta" target="_blank" rel="noopener">無料カウンセリングはこちら<span class="arrow">›</span></a>
+    <a href="https://www.suzu-clinic.com/counseling/" class="cta" target="_blank" rel="noopener">今すぐ無料カウンセリングを予約<span class="arrow">›</span></a>
+    <p style="margin-top:14px; font-size:12px; opacity:0.9; letter-spacing:0.1em;">カウンセリング完全無料 ・ 契約不要 ・ 当日施術可</p>
   </div>
 </section>
+
+<!-- Floating CTA (mobile only) -->
+<div class="sticky-cta">
+  <a href="https://www.suzu-clinic.com/counseling/" class="cta" target="_blank" rel="noopener">
+    今すぐ無料カウンセリングを予約<span class="arrow">›</span>
+  </a>
+</div>
 
 <!-- ============== Footer ============== -->
 <footer class="site-footer">

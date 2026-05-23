@@ -292,6 +292,25 @@ p { margin: 0; }
 }
 .cta-ghost:hover { background: var(--bg-pink); }
 
+/* CTA wrapper for centered + mobile full-width CTAs */
+.cta-center { text-align: center; }
+.cta-micro {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--ink-400);
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .cta-center .cta {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* --- Hero (FV image direct embed) ------------------------ */
 .hero-image {
   width: 100%;
@@ -478,32 +497,41 @@ p { margin: 0; }
 .worry-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 14px;
   max-width: 760px;
   margin: 0 auto;
 }
 .worry-list .item {
   display: flex; align-items: flex-start; gap: 14px;
-  padding: 22px 26px;
+  padding: 20px 22px;
   background: #fff;
   border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--pink-300);
   border-radius: var(--r);
   font-family: var(--serif);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15.5px;
+  line-height: 1.65;
   color: var(--ink-900);
+  transition: border-color .2s, box-shadow .2s;
+}
+.worry-list .item:hover {
+  border-left-color: var(--pink-accent);
+  box-shadow: var(--shadow-sm);
 }
 .worry-list .item .check {
-  width: 24px; height: 24px; flex: none;
+  width: 26px; height: 26px; flex: none;
   border-radius: 50%;
-  background: var(--pink-100);
-  color: var(--pink-500);
+  background: var(--pink-accent);
+  color: #fff;
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 @media (max-width: 640px) {
-  .worry-list { grid-template-columns: 1fr; }
-  .worry-list .item { font-size: 15px; padding: 18px 20px; }
+  .worry-list { grid-template-columns: 1fr; gap: 10px; }
+  .worry-list .item { font-size: 15px; padding: 16px 18px; gap: 12px; }
 }
 
 /* --- Treatment cards ------------------------------------- */
@@ -1233,44 +1261,84 @@ p { margin: 0; }
 
 /* --- Campaign Notice Bar --------------------------------- */
 .campaign-bar {
+  background: linear-gradient(135deg, #c84e78 0%, var(--pink-accent) 55%, #f4a0bb 100%);
+  color: #fff;
+  font-family: var(--serif);
+  letter-spacing: 0.04em;
+  position: relative;
+  overflow: hidden;
+}
+.campaign-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 50%, rgba(255,255,255,0.14) 0, transparent 45%);
+  pointer-events: none;
+}
+.campaign-bar-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  background: var(--pink-accent);
-  color: #fff;
+  gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto;
   padding: 12px 20px;
-  font-size: 14px;
-  letter-spacing: 0.04em;
+}
+.campaign-bar-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 .campaign-bar-badge {
-  background: #fff;
-  color: var(--pink-accent);
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.45);
+  color: #fff;
   font-size: 11px;
   font-weight: 700;
-  padding: 2px 10px;
+  padding: 3px 12px;
   border-radius: 20px;
   letter-spacing: 0.08em;
   white-space: nowrap;
+  flex-shrink: 0;
 }
+.campaign-bar-text { font-size: 14px; white-space: nowrap; }
 .campaign-bar-text strong { font-size: 16px; }
-.campaign-bar-period { font-size: 12px; opacity: 0.9; }
+.campaign-bar-period { font-size: 12px; opacity: 0.85; white-space: nowrap; }
 .campaign-bar-cta {
   background: #fff;
   color: var(--pink-accent);
   font-size: 13px;
   font-weight: 700;
-  padding: 6px 18px;
+  padding: 7px 18px;
   border-radius: 20px;
   text-decoration: none;
   white-space: nowrap;
+  flex-shrink: 0;
   transition: opacity .2s;
 }
 .campaign-bar-cta:hover { opacity: 0.85; }
-@media (max-width: 640px) {
-  .campaign-bar { gap: 8px; padding: 10px 16px; }
+@media (max-width: 880px) {
   .campaign-bar-period { display: none; }
+}
+@media (max-width: 640px) {
+  .campaign-bar-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px 16px;
+    align-items: stretch;
+  }
+  .campaign-bar-top { justify-content: center; }
+  .campaign-bar-text { font-size: 15px; }
+  .campaign-bar-text strong { font-size: 17px; }
+  .campaign-bar-cta {
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 14px;
+    border-radius: 25px;
+    animation: cta-pulse 2s ease-in-out infinite;
+  }
 }
 
 /* --- Mobile improvements --------------------------------- */
