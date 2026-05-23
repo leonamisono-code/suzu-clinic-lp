@@ -723,6 +723,39 @@ p { margin: 0; }
   .flow { grid-template-columns: 1fr 1fr; }
   .flow .step::after { display: none; }
 }
+@media (max-width: 640px) {
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .flow .step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+    padding: 18px 20px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--line-soft);
+    background: #fff;
+    position: relative;
+  }
+  .flow .step:first-child { border-radius: var(--r) var(--r) 0 0; }
+  .flow .step:last-child { border-radius: 0 0 var(--r) var(--r); border-bottom: none; }
+  .flow .step::after { display: none; }
+  .flow .step .step-no {
+    flex: none;
+    width: 52px;
+    text-align: center;
+    background: var(--bg-pink);
+    border-radius: var(--r-sm);
+    padding: 8px 6px;
+  }
+  .flow .step .step-no .n { font-size: 20px; }
+  .flow .step h4 { margin-top: 0; font-size: 15px; }
+  .flow .step p { margin-top: 4px; font-size: 13px; }
+}
 
 /* --- FAQ ------------------------------------------------- */
 .faq { max-width: 880px; margin: 0 auto; }
