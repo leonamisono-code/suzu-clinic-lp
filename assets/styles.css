@@ -1917,3 +1917,7 @@ p { margin: 0; }
   #price-section { display: none; }
   #strengths-section { display: none; }
 }
+
+@media (max-width: 600px) {
+  .section-head .ja { font-size: 20px; }
+}
