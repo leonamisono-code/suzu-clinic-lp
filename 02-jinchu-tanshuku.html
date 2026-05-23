@@ -7,10 +7,11 @@
 <meta name="description" content="人中短縮（リップリフト）で口元の印象を整える。形成外科専門医による傷跡0.1mmの縫合技術。広島駅徒歩5分のすず美容形成外科医院。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" />
-<link rel="stylesheet" href="assets/styles.css?v=5" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" />
+<link rel="stylesheet" href="assets/styles.css?v=6" />
 <script src="assets/image-slot.js"></script>
 <script src="assets/countdown.js" defer></script>
+<script src="assets/fadein.js" defer></script>
 </head>
 <body>
 
@@ -63,13 +64,13 @@
 <!-- ============== Treatment lineup (4 menus) — moved up ============== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">TREATMENT</span>
       <h2 class="ja">人中・口元の<span class="hi">4つ</span>の選択肢</h2>
       <p class="desc">「切る・切らない」から「ボリュームを足す・引き上げる」まで。<br />お悩みとライフスタイルに合わせて、最適な施術をご提案します。</p>
     </div>
 
-    <div class="treat-grid treat-grid-2x2">
+    <div class="treat-grid treat-grid-2x2 fade-in">
       <!-- ① 人中短縮術 -->
       <article class="treat-card">
         <div class="body">
@@ -147,25 +148,25 @@
 <!-- ============== Differentiator: 0.1mm scar ============== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">OUR STRENGTH</span>
       <h2 class="ja">傷跡<span class="hi">0.1mm</span>へのこだわり</h2>
       <p class="desc">形成外科専門医ならではの技術が、最も体感できる施術です。</p>
     </div>
     <div class="strength-grid">
-      <article class="strength-card">
+      <article class="strength-card fade-in">
         <span class="num"><span class="l">STRENGTH</span><span class="n">01</span></span>
         <p class="lead">DESIGN</p>
         <h3>ミリ単位の<br />切開デザイン</h3>
         <p>横顔・正面・笑顔——あらゆる角度から最適な短縮量を計算。鼻翼基部の自然なラインに沿わせ、不自然な「アヒル口」にならないよう調整します。</p>
       </article>
-      <article class="strength-card">
+      <article class="strength-card fade-in">
         <span class="num"><span class="l">STRENGTH</span><span class="n">02</span></span>
         <p class="lead">SUTURE</p>
         <h3>形成外科専門医の<br />精緻な縫合技術</h3>
         <p>真皮縫合と表皮縫合を組み合わせ、傷跡への張力を分散。日本形成外科学会認定専門医として培った技術で、極細の縫合糸を用いて仕上げます。</p>
       </article>
-      <article class="strength-card">
+      <article class="strength-card fade-in">
         <span class="num"><span class="l">STRENGTH</span><span class="n">03</span></span>
         <p class="lead">RECOVERY</p>
         <h3>最小限の侵襲で<br />ダウンタイム短縮</h3>
@@ -187,12 +188,12 @@
 <!-- ============== Before/After cases ============== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">CASE</span>
       <h2 class="ja">症例写真</h2>
       <p class="desc">いずれもご本人の同意を得て掲載しています。</p>
     </div>
-    <div class="treat-grid">
+    <div class="treat-grid fade-in">
       <article class="treat-card">
         <div class="visual" style="display:grid; grid-template-rows:1fr 1fr; gap:2px; background:#fff;">
           <div style="position:relative;"><span style="position:absolute; top:0; left:0; padding:6px 14px; font-family:var(--serif); font-size:12px; letter-spacing:0.18em; color:#fff; background:#6E6663; z-index:2;">Before</span><image-slot id="c1-b" placeholder="症例1 Before"></image-slot></div>
@@ -288,11 +289,11 @@
 <!-- ============== Pricing ============== -->
 <section class="section">
   <div class="wrap-narrow">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">PRICE</span>
       <h2 class="ja">明朗な<span class="hi">料金</span>体系</h2>
     </div>
-    <div class="price-table">
+    <div class="price-table fade-in">
       <div class="price-row head">
         <div>施術メニュー</div>
         <div style="text-align:right;">通常価格</div>
@@ -330,11 +331,11 @@
 <!-- ============== Doctor profile ============== -->
 <section class="section soft">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">DOCTOR</span>
       <h2 class="ja">院長紹介</h2>
     </div>
-    <div class="doctor">
+    <div class="doctor fade-in">
       <div class="portrait">
         <image-slot id="doc-portrait" src="assets/doctor-iwadare.webp" placeholder="岩垂先生 ポートレート"></image-slot>
       </div>
@@ -372,11 +373,11 @@
 <!-- ============== Flow ============== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">FLOW</span>
       <h2 class="ja">ご来院から術後までの流れ</h2>
     </div>
-    <div class="flow">
+    <div class="flow fade-in">
       <div class="step"><span class="step-no">STEP<span class="n">01</span></span><h4>ご予約</h4><p>お電話・LINE・予約フォームから。</p></div>
       <div class="step"><span class="step-no">STEP<span class="n">02</span></span><h4>カウンセリング</h4><p>シミュレーションを交えてご相談。</p></div>
       <div class="step"><span class="step-no">STEP<span class="n">03</span></span><h4>デザイン</h4><p>切除量・ラインを綿密に設計。</p></div>
@@ -389,11 +390,11 @@
 <!-- ============== FAQ ============== -->
 <section class="section pink">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">FAQ</span>
       <h2 class="ja">よくあるご質問</h2>
     </div>
-    <div class="faq">
+    <div class="faq fade-in">
       <details>
         <summary>傷跡は本当に目立ちませんか？</summary>
         <div class="a">鼻の直下に切開ラインを設定するため、もともと影になりやすく、傷跡は目立ちにくい位置です。さらに形成外科専門医による精緻な縫合技術で、半年〜1年かけてほぼ分からない仕上がりへと整います。</div>
@@ -425,11 +426,11 @@
 <!-- ============== Clinic info ============== -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head fade-in">
       <span class="eyebrow">CLINIC</span>
       <h2 class="ja">クリニック案内</h2>
     </div>
-    <div class="clinic-info">
+    <div class="clinic-info fade-in">
       <div class="map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13169.161050386825!2d132.4639604!3d34.3939675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x746b4475e12984fd!2z44GZ44Ga576O5a655b2i5oiQ5aSW56eR5Yy76Zmi!5e0!3m2!1sja!2sjp!4v1661932079926!5m2!1sja!2sjp"
