@@ -68,13 +68,92 @@ p { margin: 0; }
   .wrap, .wrap-narrow { padding: 0 20px; }
 }
 
+/* --- Top Announcement Banner ----------------------------- */
+.top-banner {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: linear-gradient(90deg, #d86187 0%, var(--pink-accent) 50%, #f4a0bb 100%);
+  color: #fff;
+  padding: 10px 16px;
+}
+.top-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.top-banner-label {
+  background: #fff;
+  color: var(--pink-accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+}
+.top-banner-text {
+  font-size: 13px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+.top-banner-countdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.top-banner-countdown .tb-seg {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+.top-banner-countdown .tb-sep { opacity: 0.7; }
+.top-banner-cta {
+  background: #fff;
+  color: var(--pink-accent);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  transition: opacity .2s;
+  flex-shrink: 0;
+}
+.top-banner-cta:hover { opacity: 0.85; }
+@media (max-width: 880px) {
+  .top-banner-text { display: none; }
+  .top-banner-inner { gap: 10px; }
+}
+@media (max-width: 640px) {
+  .top-banner { padding: 8px 12px; }
+  .top-banner-inner { gap: 8px; justify-content: space-between; }
+  .top-banner-label { font-size: 10px; padding: 2px 10px; }
+  .top-banner-countdown { font-size: 11px; }
+  .top-banner-countdown .tb-seg { padding: 2px 5px; }
+  .top-banner-cta { font-size: 11px; padding: 6px 14px; }
+}
+
 /* --- Header ---------------------------------------------- */
 .site-header {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: 40px; z-index: 50;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(140%) blur(8px);
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line-soft);
+}
+@media (max-width: 640px) {
+  .site-header { top: 36px; }
 }
 .site-header .bar {
   display: flex; align-items: center; justify-content: space-between;
@@ -1129,6 +1208,50 @@ p { margin: 0; }
 @media (max-width: 640px) {
   .campaign-bar { gap: 8px; padding: 10px 16px; }
   .campaign-bar-period { display: none; }
+}
+
+/* --- Mobile improvements --------------------------------- */
+@media (max-width: 640px) {
+  /* セクション画像のはみ出し防止 */
+  .case-section img,
+  .section img { max-width: 100%; height: auto; }
+
+  /* 施術カードのフォントサイズ調整 */
+  .treat-card h3 { font-size: 17px; }
+  .treat-card .price { font-size: 20px; }
+  .treat-card .desc { font-size: 13px; }
+  .treat-card .fit li { font-size: 13px; }
+  .treat-card .body { padding: 20px 18px 24px; }
+
+  /* 強みカードの余白調整 */
+  .strength-card { padding: 28px 20px; }
+  .strength-card h3 { font-size: 17px; }
+
+  /* フローのスクロール改善 */
+  .flow { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .flow .step { padding: 20px 14px; }
+  .flow .step h4 { font-size: 14px; }
+
+  /* 価格テーブルのモバイル改善 */
+  .price-row .name { font-size: 14px; }
+  .price-row .camp .num { font-size: 22px; }
+
+  /* キャンペーンスタンプ */
+  .campaign { gap: 20px; }
+  .campaign h3 { font-size: 16px; }
+
+  /* シャインバナー */
+  .shine-banner-text strong { font-size: 16px; }
+
+  /* カウントダウンバンドの余白 */
+  .countdown-band { padding: 40px 0; }
+
+  /* フッターCTAバンド */
+  .cta-band { padding: 56px 0; }
+  .cta-band h2 { font-size: 22px; }
+
+  /* スティッキーCTAのbody padding（トップバナー分を追加） */
+  body { padding-bottom: 84px; }
 }
 
 /* --- Utility --------------------------------------------- */

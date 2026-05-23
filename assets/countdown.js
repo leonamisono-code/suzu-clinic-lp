@@ -21,7 +21,7 @@
       if (n) n.textContent = pad(v, w);
     }
     set('d', d, 2); set('h', h, 2); set('m', m, 2); set('s', s, 2);
-    if (ended) el.closest('.countdown-band')?.classList.add('ended');
+    if (ended) el.closest('.countdown-band, .top-banner')?.classList.add('ended');
   }
   function init() {
     document.querySelectorAll('[data-countdown]').forEach(function (el) {
