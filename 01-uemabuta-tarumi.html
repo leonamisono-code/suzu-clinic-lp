@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" />
-<link rel="stylesheet" href="assets/styles.css?v=6" />
+<link rel="stylesheet" href="assets/styles.css?v=7" />
 <script src="assets/image-slot.js"></script>
 <script src="assets/countdown.js" defer></script>
 <script src="assets/fadein.js" defer></script>
@@ -84,13 +84,111 @@
 </section>
 
 <!-- ============== Treatment lineup ============== -->
-<section class="section soft case-section">
-  <div class="wrap">
-    <picture>
-      <source media="(max-width: 880px)" srcset="assets/treatment-section-sp.png" />
+<section class="section soft">
+
+  <!-- PC/tablet: original ChatGPT image -->
+  <div class="tx-pc-img">
+    <div class="wrap">
       <img src="assets/treatment-section.png" alt="TREATMENT 3つの治療法から最適なご提案を — 01 切らないたるみ取り ¥198,000／02 眉下切開 ¥275,000／03 切らない眼瞼下垂 ¥198,000（税込）" />
-    </picture>
+    </div>
   </div>
+
+  <!-- Mobile only: premium HTML cards -->
+  <div class="tx-sp-wrap">
+    <div class="wrap">
+      <div class="section-head fade-in">
+        <span class="eyebrow">TREATMENT</span>
+        <h2 class="ja">3つの<span class="hi">治療法</span>から<br />最適なご提案を</h2>
+        <p class="desc">「切らない」から「切開」まで。<br />原因とご希望に合わせてご提案します。</p>
+      </div>
+      <div class="tx-cards">
+
+        <!-- Card 01 -->
+        <article class="tx-card fade-in">
+          <div class="tx-num" aria-hidden="true">01</div>
+          <div class="tx-body">
+            <span class="tx-badge tx-badge--soft">切らない</span>
+            <h3 class="tx-name">切らないたるみ取り</h3>
+            <p class="tx-sub">糸・高周波による施術</p>
+            <div class="tx-dt">
+              <span class="tx-dt-label">Downtime</span>
+              <span class="tx-dt-bar"></span>
+              <span class="tx-dt-val">1〜3日</span>
+            </div>
+            <ul class="tx-list">
+              <li>まぶたのたるみが気になるが切開には抵抗がある</li>
+              <li>ダウンタイムをなるべく短くしたい</li>
+              <li>まずは控えめな変化から体験したい</li>
+            </ul>
+            <div class="tx-price">
+              <s class="tx-orig">¥198,000</s>
+              <div class="tx-camp-row">
+                <span class="tx-off">50% OFF</span>
+                <div class="tx-camp">¥<strong>99,000</strong><span class="tx-tax">税込</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 02 (recommended) -->
+        <article class="tx-card tx-card--rec fade-in">
+          <div class="tx-rec-banner"><span class="tx-rec-label">最も効果的</span></div>
+          <div class="tx-num tx-num--rec" aria-hidden="true">02</div>
+          <div class="tx-body">
+            <span class="tx-badge tx-badge--fill">切開</span>
+            <h3 class="tx-name">眉下切開</h3>
+            <p class="tx-sub">眉毛直下で皮膚を切除</p>
+            <div class="tx-dt">
+              <span class="tx-dt-label">Downtime</span>
+              <span class="tx-dt-bar"></span>
+              <span class="tx-dt-val">5〜7日</span>
+            </div>
+            <ul class="tx-list">
+              <li>たるみを根本から確実・長期的に改善したい</li>
+              <li>傷が眉毛ラインに沿って隠れるため目立ちにくい</li>
+              <li>他院で「切るしかない」と言われた方にも対応</li>
+            </ul>
+            <div class="tx-price">
+              <s class="tx-orig">¥275,000</s>
+              <div class="tx-camp-row">
+                <span class="tx-off">50% OFF</span>
+                <div class="tx-camp">¥<strong>137,500</strong><span class="tx-tax">税込</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 03 -->
+        <article class="tx-card fade-in">
+          <div class="tx-num" aria-hidden="true">03</div>
+          <div class="tx-body">
+            <span class="tx-badge tx-badge--soft">切らない</span>
+            <h3 class="tx-name">切らない眼瞼下垂</h3>
+            <p class="tx-sub">挙筋を糸で調整</p>
+            <div class="tx-dt">
+              <span class="tx-dt-label">Downtime</span>
+              <span class="tx-dt-bar"></span>
+              <span class="tx-dt-val">1〜3日</span>
+            </div>
+            <ul class="tx-list">
+              <li>目の開きが悪くなった・眠そうに見えると言われる</li>
+              <li>眼瞼下垂があるが手術に踏み出せない</li>
+              <li>眉を上げないと目が開けにくくなってきた</li>
+            </ul>
+            <div class="tx-price">
+              <s class="tx-orig">¥198,000</s>
+              <div class="tx-camp-row">
+                <span class="tx-off">50% OFF</span>
+                <div class="tx-camp">¥<strong>99,000</strong><span class="tx-tax">税込</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.tx-cards -->
+    </div><!-- /.wrap -->
+  </div><!-- /.tx-sp-wrap -->
+
 </section>
 
 <!-- ============== Shining CTA Banner ============== -->
