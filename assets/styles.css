@@ -1921,3 +1921,8 @@ p { margin: 0; }
 @media (max-width: 600px) {
   .section-head .ja { font-size: 20px; }
 }
+
+@media (max-width: 600px) {
+  .cta { letter-spacing: 0.05em; font-size: 14px; }
+  .flow .step h4 { white-space: nowrap; font-size: 13px; }
+}
