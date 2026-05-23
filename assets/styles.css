@@ -417,7 +417,14 @@ p { margin: 0; }
 .section.soft { background: var(--bg-soft); }
 .section.pink { background: linear-gradient(180deg, var(--bg-pink) 0%, #fff 100%); }
 .section.warm { background: var(--bg-warm); }
-@media (max-width: 640px) { .section { padding: 48px 0; } .section.tight { padding: 32px 0; } }
+@media (max-width: 640px) {
+  .section { padding: 48px 0; }
+  .section.tight { padding: 32px 0; }
+  .case-section { padding: 24px 0; }
+  .case-section .wrap { padding: 0; }
+  .case-section picture,
+  .case-section img { display: block; width: 100%; }
+}
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
