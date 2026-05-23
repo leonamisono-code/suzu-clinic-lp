@@ -592,6 +592,9 @@ p { margin: 0; }
 .strength-card p { margin-top: 18px; font-size: 14px; line-height: 1.95; color: var(--ink-700); text-align: left; }
 @media (max-width: 880px) {
   .strength-grid { grid-template-columns: 1fr; gap: 40px; }
+  .strength-card .num .l { display: none; }
+  .strength-card .num { width: 56px; height: 56px; top: -20px; }
+  .strength-card .num .n { font-size: 22px; }
 }
 
 /* --- Pricing table --------------------------------------- */
