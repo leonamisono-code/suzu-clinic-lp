@@ -1,0 +1,23 @@
+{
+  "id": "2026-05-23T04-29-07-709Z-mobile-treatment-menu-cards-for-japa",
+  "createdAt": "2026-05-23T04:30:15.091Z",
+  "prompt": "Mobile treatment menu cards for Japanese cosmetic surgery clinic. Typography must use: Shippori Mincho for Japanese headings, Cormorant Garamond for English labels/numbers, Noto Sans JP for body text. Palette: white background, pale pink #f78da7 accents, charcoal #2d2d2d text. 3 stacked vertical cards for: 01 切らないたるみ取り (no-cut, downtime 1-3 days, ¥99,000 campaign from ¥198,000), 02 眉下切開 (cut, downtime 5-7 days, ¥137,500 from ¥275,000), 03 切らない眼瞼下垂 (no-cut, downtime 1-3 days, ¥99,000 from ¥198,000). Each card: number in Cormorant, badge, bold Japanese name in Shippori Mincho, downtime bar, 3 candidate bullet points, price with 50% OFF badge. Premium medical aesthetic, refined spacing.",
+  "mode": null,
+  "url": null,
+  "viewport": "desktop",
+  "repoRoot": "/private/tmp/suzu-clinic-lp",
+  "cwd": "/private/tmp/suzu-clinic-lp",
+  "requestPath": "/private/tmp/suzu-clinic-lp/.aidesigner/runs/2026-05-23T04-29-07-709Z-mobile-treatment-menu-cards-for-japa/request.json",
+  "repoContextPath": "/private/tmp/suzu-clinic-lp/.aidesigner/runs/2026-05-23T04-29-07-709Z-mobile-treatment-menu-cards-for-japa/repo-context.json",
+  "designHtmlPath": "/private/tmp/suzu-clinic-lp/.aidesigner/runs/2026-05-23T04-29-07-709Z-mobile-treatment-menu-cards-for-japa/design.html",
+  "previewPath": null,
+  "previewError": "Preview rendering requires puppeteer. Install it in the repo or alongside @aidesigner/agent-skills.",
+  "parentRunId": null,
+  "usage": {
+    "prompt_tokens": 2736,
+    "completion_tokens": 9306,
+    "total_tokens": 12042
+  },
+  "transport": "api_key",
+  "remoteRunId": null
+}

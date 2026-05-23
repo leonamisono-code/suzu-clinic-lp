@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Suzu Clinic - Treatment Menu</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Proscript -->
+    <style>
+        :root {
+            --color-charcoal: #2d2d2d;
+            --color-pink: #f78da7;
+            --color-bg: #fcfcfc;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography Mapping */
+        .font-sans-jp { font-family: 'Noto Sans JP', sans-serif; }
+        .font-mincho { font-family: 'Shippori Mincho', serif; }
+        .font-garamond { font-family: 'Cormorant Garamond', serif; }
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+
+        /* Custom Utilities */
+        .text-charcoal { color: var(--color-charcoal); }
+        .text-pink { color: var(--color-pink); }
+        .bg-pink { background-color: var(--color-pink); }
+        .border-pink { border-color: var(--color-pink); }
+
+        /* Fluid Entrance Animation */
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        .animate-entrada {
+            opacity: 0;
+            animation: fadeSlideUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            animation-delay: calc(var(--delay) * 150ms);
+        }
+
+        /* Delicate dashed border */
+        .dashed-divider {
+            background-image: linear-gradient(to right, rgba(45, 45, 45, 0.15) 50%, transparent 50%);
+            background-size: 6px 1px;
+            background-repeat: repeat-x;
+        }
+
+        /* Price tag rotation */
+        .sticker-rotate {
+            transform: rotate(10deg);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-container:hover .sticker-rotate {
+            transform: rotate(15deg) scale(1.05);
+        }
+
+        /* Liquid glow effect on price box */
+        .price-box {
+            position: relative;
+            z-index: 1;
+        }
+        .price-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(247, 141, 167, 0.08) 0%, transparent 100%);
+            border-radius: inherit;
+            z-index: -1;
+            transition: opacity 0.5s ease;
+        }
+        .card-container:hover .price-box::before {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="min-h-[100dvh] w-full px-4 py-16 flex justify-center">
+        <!-- Structural Layer (Meso): The mobile-constrained column layout -->
+        <article class="w-full max-w-[420px] flex flex-col gap-8">
+            
+            <!-- Header section mapping to architectural narrative -->
+            <header class="text-center mb-4 animate-entrada" style="--delay: 1;">
+                <p class="font-garamond italic text-sm text-pink tracking-[0.2em] mb-3">Treatments</p>
+                <h1 class="font-mincho text-2xl md:text-3xl text-charcoal tracking-widest relative inline-block">
+                    施術メニュー
+                    <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-[1px] bg-charcoal/20"></span>
+                </h1>
+            </header>
+
+            <!-- Card 01: 切らないたるみ取り -->
+            <div class="card-container animate-entrada bg-white rounded-2xl p-7 relative border border-charcoal/[0.03] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(45,45,45,0.08)] transition-all duration-500 hover:-translate-y-[2px] group" style="--delay: 2;">
+                
+                <div class="flex justify-between items-start mb-5">
+                    <!-- Upright, bold Noto Sans JP pink number -->
+                    <span class="font-sans-jp font-bold text-6xl text-pink leading-none">01</span>
+                    <span class="font-sans-jp text-[10px] tracking-widest text-pink border border-pink/30 rounded-full px-3 py-1 bg-pink/[0.02] mt-1">メス不使用</span>
+                </div>
+                
+                <h2 class="font-mincho tracking-wide text-[22px] text-charcoal font-medium leading-snug mb-6">
+                    切らないたるみ取り
+                </h2>
+
+                <!-- Downtime Metric -->
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-garamond text-xs tracking-widest text-charcoal/40 uppercase w-20">Downtime</span>
+                    <div class="flex-1 h-[1px] bg-charcoal/10 relative overflow-hidden rounded-full">
+                        <div class="absolute top-0 left-0 h-full bg-pink w-[20%] transition-all duration-1000 ease-out"></div>
+                    </div>
+                    <span class="font-sans-jp text-xs font-medium text-charcoal w-12 text-right">1〜3日</span>
+                </div>
+
+                <div class="h-[1px] w-full dashed-divider mb-6"></div>
+
+                <!-- Targeted Beneficiaries -->
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-pink mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">目の下のふくらみ・クマが気になる方</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-pink mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">切開や縫合に抵抗感・不安がある方</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-pink mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">翌日からメイクをして出社したい方</span>
+                    </li>
+                </ul>
+
+                <!-- Price Module -->
+                <div class="price-box bg-[#fafafa] rounded-xl p-5 border border-charcoal/5 relative">
+                    <!-- The 50% Off Sticker -->
+                    <div class="sticker-rotate absolute -right-3 -top-4 w-14 h-14 rounded-full bg-pink text-white flex flex-col items-center justify-center shadow-[0_8px_16px_rgba(247,141,167,0.3)]">
+                        <span class="font-garamond text-xl font-semibold leading-none mt-1">50<span class="text-sm">%</span></span>
+                        <span class="font-sans-jp text-[8px] font-bold tracking-widest uppercase mt-[-1px]">Off</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="font-sans-jp text-[9px] bg-charcoal text-white tracking-widest px-1.5 py-0.5 rounded-sm">限定価格</span>
+                        <span class="font-sans-jp font-medium text-xs text-charcoal/40 line-through decoration-charcoal/30">¥198,000</span>
+                    </div>
+                    
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-sans-jp text-4xl text-pink font-bold tracking-tight">¥99,000</span>
+                        <span class="font-sans-jp text-[10px] text-charcoal/50">（税込）</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 02: 眉下切開 -->
+            <div class="card-container animate-entrada bg-white rounded-2xl p-7 relative border border-charcoal/[0.03] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(45,45,45,0.08)] transition-all duration-500 hover:-translate-y-[2px] group" style="--delay: 3;">
+                
+                <div class="flex justify-between items-start mb-5">
+                    <!-- Upright, bold Noto Sans JP pink number -->
+                    <span class="font-sans-jp font-bold text-6xl text-pink leading-none">02</span>
+                    <span class="font-sans-jp text-[10px] tracking-widest text-[#2d2d2d] border border-[#2d2d2d]/20 rounded-full px-3 py-1 bg-transparent mt-1">切開法</span>
+                </div>
+                
+                <h2 class="font-mincho tracking-wide text-[22px] text-charcoal font-medium leading-snug mb-6">
+                    眉下切開
+                </h2>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-garamond text-xs tracking-widest text-charcoal/40 uppercase w-20">Downtime</span>
+                    <div class="flex-1 h-[1px] bg-charcoal/10 relative overflow-hidden rounded-full">
+                        <div class="absolute top-0 left-0 h-full bg-charcoal/60 w-[50%] transition-all duration-1000 ease-out"></div>
+                    </div>
+                    <span class="font-sans-jp text-xs font-medium text-charcoal w-12 text-right">5〜7日</span>
+                </div>
+
+                <div class="h-[1px] w-full dashed-divider mb-6"></div>
+
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-charcoal/40 mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">まぶたのたるみが強く、二重幅が狭まった方</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-charcoal/40 mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">本来の目元の印象を変えずに若返りたい方</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-charcoal/40 mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">根本的なたるみの除去を求めている方</span>
+                    </li>
+                </ul>
+
+                <div class="price-box bg-[#fafafa] rounded-xl p-5 border border-charcoal/5 relative">
+                    <div class="sticker-rotate absolute -right-3 -top-4 w-14 h-14 rounded-full bg-pink text-white flex flex-col items-center justify-center shadow-[0_8px_16px_rgba(247,141,167,0.3)]">
+                        <span class="font-garamond text-xl font-semibold leading-none mt-1">50<span class="text-sm">%</span></span>
+                        <span class="font-sans-jp text-[8px] font-bold tracking-widest uppercase mt-[-1px]">Off</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="font-sans-jp text-[9px] bg-charcoal text-white tracking-widest px-1.5 py-0.5 rounded-sm">限定価格</span>
+                        <span class="font-sans-jp font-medium text-xs text-charcoal/40 line-through decoration-charcoal/30">¥275,000</span>
+                    </div>
+                    
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-sans-jp text-4xl text-pink font-bold tracking-tight">¥137,500</span>
+                        <span class="font-sans-jp text-[10px] text-charcoal/50">（税込）</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 03: 切らない眼瞼下垂 -->
+            <div class="card-container animate-entrada bg-white rounded-2xl p-7 relative border border-charcoal/[0.03] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(45,45,45,0.08)] transition-all duration-500 hover:-translate-y-[2px] group" style="--delay: 4;">
+                
+                <div class="flex justify-between items-start mb-5">
+                    <!-- Upright, bold Noto Sans JP pink number -->
+                    <span class="font-sans-jp font-bold text-6xl text-pink leading-none">03</span>
+                    <span class="font-sans-jp text-[10px] tracking-widest text-pink border border-pink/30 rounded-full px-3 py-1 bg-pink/[0.02] mt-1">メス不使用</span>
+                </div>
+                
+                <h2 class="font-mincho tracking-wide text-[22px] text-charcoal font-medium leading-snug mb-6">
+                    切らない眼瞼下垂
+                </h2>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-garamond text-xs tracking-widest text-charcoal/40 uppercase w-20">Downtime</span>
+                    <div class="flex-1 h-[1px] bg-charcoal/10 relative overflow-hidden rounded-full">
+                        <div class="absolute top-0 left-0 h-full bg-pink w-[20%] transition-all duration-1000 ease-out"></div>
+                    </div>
+                    <span class="font-sans-jp text-xs font-medium text-charcoal w-12 text-right">1〜3日</span>
+                </div>
+
+                <div class="h-[1px] w-full dashed-divider mb-6"></div>
+
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-pink mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">目が開きにくく、無意識に額にシワが寄る方</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-pink mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">眠そうな目を、黒目がちでぱっちりさせたい方</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-3.5 h-3.5 text-pink mt-[3px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="font-sans-jp text-[13px] text-charcoal/80 leading-relaxed">切開せずに目ヂカラを自然にアップしたい方</span>
+                    </li>
+                </ul>
+
+                <div class="price-box bg-[#fafafa] rounded-xl p-5 border border-charcoal/5 relative">
+                    <div class="sticker-rotate absolute -right-3 -top-4 w-14 h-14 rounded-full bg-pink text-white flex flex-col items-center justify-center shadow-[0_8px_16px_rgba(247,141,167,0.3)]">
+                        <span class="font-garamond text-xl font-semibold leading-none mt-1">50<span class="text-sm">%</span></span>
+                        <span class="font-sans-jp text-[8px] font-bold tracking-widest uppercase mt-[-1px]">Off</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-1.5">
+                        <span class="font-sans-jp text-[9px] bg-charcoal text-white tracking-widest px-1.5 py-0.5 rounded-sm">限定価格</span>
+                        <span class="font-sans-jp font-medium text-xs text-charcoal/40 line-through decoration-charcoal/30">¥198,000</span>
+                    </div>
+                    
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-sans-jp text-4xl text-pink font-bold tracking-tight">¥99,000</span>
+                        <span class="font-sans-jp text-[10px] text-charcoal/50">（税込）</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Padding / Spatial Breathing Room -->
+            <div class="h-8"></div>
+        </article>
+    </main>
+
+    <!-- Post-load orchestration logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger reflow to ensure animations play smoothly on initial mount
+            setTimeout(() => {
+                document.querySelectorAll('.animate-entrada').forEach((el) => {
+                    el.style.animationPlayState = 'running';
+                });
+            }, 50);
+        });
+    </script>
+</body>
+</html>

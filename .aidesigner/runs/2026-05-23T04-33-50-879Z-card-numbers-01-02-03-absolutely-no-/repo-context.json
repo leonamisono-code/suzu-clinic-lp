@@ -1,0 +1,17 @@
+{
+  "repoRoot": "/private/tmp/suzu-clinic-lp",
+  "cwd": "/private/tmp/suzu-clinic-lp",
+  "stack": {
+    "frameworks": [],
+    "componentLibraries": [],
+    "styling": [],
+    "componentDirectories": [],
+    "packageFiles": []
+  },
+  "routes": [],
+  "tokens": {
+    "sources": [],
+    "tokens": []
+  },
+  "summary": "Repo root: /private/tmp/suzu-clinic-lp\nWorking directory: /private/tmp/suzu-clinic-lp\nFrameworks: none detected\nStyling: none detected\nComponent libraries: none detected\nRoute roots: none detected\nRoute candidates: none detected\nComponent directories: none detected\nToken sources: none detected\nVisible design language hints: no strong hints detected"
+}

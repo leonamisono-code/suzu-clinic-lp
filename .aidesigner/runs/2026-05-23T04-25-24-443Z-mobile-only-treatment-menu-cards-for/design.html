@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Suzu Clinic - Treatment Menu</title>
+    
+    <!-- 
+    aesthetic_dna: Premium Japanese Medical / Minimalist Mobile App
+    ui_paradigm: Vertical Stacked Menu Cards with visual data hierarchy
+    palette: White, Faint Pink (#f78da7), Charcoal (Zinc-900)
+    -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#f78da7',
+                            pinkDark: '#e56b8a', // For text contrast
+                            pinkLight: '#fcf0f3',
+                            charcoal: '#18181b', // zinc-900
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Outfit"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 8px 30px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.01)',
+                        'inner-white': 'inset 0 1px 0 rgba(255,255,255,1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #f8f8f9;
+        }
+        body {
+            background-color: var(--bg-color);
+            -webkit-tap-highlight-color: transparent;
+            font-feature-settings: "palt" 1; /* Proportional Kana */
+        }
+
+        /* Staggered Entrance Animation */
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-card {
+            opacity: 0;
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Premium Squircle border radiuses for iOS feel */
+        .squircle {
+            border-radius: 24px;
+        }
+        .squircle-inner {
+            border-radius: 16px;
+        }
+
+        /* Downtime Segment styling */
+        .dt-segment {
+            transition: all 0.3s ease;
+        }
+        
+        /* Zig-zag cut effect for coupon */
+        .coupon-divider {
+            position: relative;
+        }
+        .coupon-divider::before,
+        .coupon-divider::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--bg-color);
+            border-radius: 50%;
+            z-index: 10;
+            border: 1px solid #f4f4f5;
+        }
+        .coupon-divider::before {
+            left: -34px;
+            clip-path: inset(0 0 0 50%); /* Hide left half */
+        }
+        .coupon-divider::after {
+            right: -34px;
+            clip-path: inset(0 50% 0 0); /* Hide right half */
+        }
+    </style>
+</head>
+<body class="antialiased text-brand-charcoal min-h-[100dvh] pb-20 pt-8 sm:py-12 px-4 selection:bg-brand-pink selection:text-white">
+
+    <!-- Mobile Constraint Container -->
+    <main class="w-full max-w-[420px] mx-auto flex flex-col gap-6">
+
+        <!-- Header / Clinic Context -->
+        <header class="mb-2 px-2 animate-card" style="animation-delay: 0ms;">
+            <p class="font-en text-xs tracking-[0.2em] text-zinc-400 uppercase font-semibold mb-1">Hiroshima City</p>
+            <h1 class="text-xl font-bold tracking-tight text-brand-charcoal flex items-center gap-2">
+                すず美容形成外科
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-pink mt-1"></span>
+            </h1>
+            <p class="text-xs text-zinc-500 mt-1">当院の人気施術メニュー・特別キャンペーン</p>
+        </header>
+
+        <!-- CARD 01: Non-Surgical Eyelid -->
+        <article class="animate-card relative bg-white squircle shadow-premium border border-zinc-100 overflow-hidden active:scale-[0.98] transition-transform duration-200" style="animation-delay: 100ms;">
+            <!-- Top Color Accent Bar -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-pinkLight via-brand-pink to-brand-pinkLight opacity-80"></div>
+            
+            <div class="p-5 sm:p-6 pb-0">
+                <!-- Meta Row -->
+                <div class="flex justify-between items-center mb-3">
+                    <div class="font-en text-3xl font-bold text-zinc-200 tracking-tighter leading-none relative">
+                        <span class="absolute -top-1 -left-2 text-brand-pink/20 text-4xl">01</span>
+                        <span class="relative z-10 text-brand-charcoal">01</span>
+                    </div>
+                    <div class="bg-brand-pinkLight text-brand-pinkDark px-3 py-1 rounded-full text-[11px] font-bold tracking-wider flex items-center gap-1.5 border border-brand-pink/20">
+                        <i class="ph-fill ph-check-circle text-sm leading-none"></i>
+                        切らない
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h2 class="text-[22px] font-bold leading-[1.3] tracking-tight mb-4">
+                    プレミアム二重術<br>
+                    <span class="text-lg font-medium text-zinc-600 block mt-0.5">（埋没法 2点留め）</span>
+                </h2>
+
+                <!-- Downtime Indicator -->
+                <div class="flex items-center gap-3 mb-5 border-l-2 border-brand-pink pl-3">
+                    <span class="text-xs font-bold text-zinc-400">ダウンタイム</span>
+                    <div class="flex gap-1 flex-1 max-w-[120px]">
+                        <div class="h-1.5 rounded-full bg-brand-pink flex-1 dt-segment"></div>
+                        <div class="h-1.5 rounded-full bg-zinc-100 flex-1 dt-segment"></div>
+                        <div class="h-1.5 rounded-full bg-zinc-100 flex-1 dt-segment"></div>
+                    </div>
+                    <span class="text-[11px] font-bold text-zinc-600">少ない</span>
+                </div>
+
+                <!-- Needs/Bullets Block -->
+                <div class="bg-zinc-50/80 squircle-inner p-4 mb-5 border border-zinc-100/50">
+                    <p class="text-[11px] font-bold text-zinc-400 mb-2 tracking-wider">こんな方におすすめ</p>
+                    <ul class="flex flex-col gap-2">
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-pink mt-0.5 shrink-0"></i>
+                            <span>毎日のアイメイクを時短したい</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-pink mt-0.5 shrink-0"></i>
+                            <span>メスでの切開には抵抗がある</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-pink mt-0.5 shrink-0"></i>
+                            <span>術後の腫れを最小限に抑えたい</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Price Coupon Area -->
+            <div class="p-5 sm:p-6 pt-4 bg-white relative coupon-divider border-t border-dashed border-zinc-200">
+                
+                <!-- 50% OFF Badge (Absolute) -->
+                <div class="absolute -top-4 right-4 sm:right-6 bg-brand-charcoal text-white font-en font-bold text-sm tracking-widest py-1.5 px-3 rounded-md shadow-lg transform rotate-2 border border-zinc-700 flex flex-col items-center leading-none">
+                    <span class="text-[10px] text-zinc-300 font-sans mb-0.5">モニター価格</span>
+                    <span class="text-brand-pink font-black text-base">50% <span class="text-xs">OFF</span></span>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="text-xs text-zinc-400 font-medium mb-1">通常価格 <span class="line-through font-en ml-1 tracking-wide">¥132,000</span></span>
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-en text-xl font-semibold text-brand-pink -translate-y-1">¥</span>
+                        <span class="font-en text-[40px] font-black tracking-tighter leading-none text-brand-charcoal">66,000</span>
+                        <span class="text-xs font-bold text-zinc-500 ml-1">（税込）</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- CARD 02: Surgical Eyelid -->
+        <article class="animate-card relative bg-white squircle shadow-premium border border-zinc-100 overflow-hidden active:scale-[0.98] transition-transform duration-200" style="animation-delay: 200ms;">
+            <div class="p-5 sm:p-6 pb-0">
+                <!-- Meta Row -->
+                <div class="flex justify-between items-center mb-3">
+                    <div class="font-en text-3xl font-bold text-zinc-200 tracking-tighter leading-none relative">
+                        <span class="absolute -top-1 -left-2 text-brand-pink/20 text-4xl">02</span>
+                        <span class="relative z-10 text-brand-charcoal">02</span>
+                    </div>
+                    <div class="bg-zinc-100 text-zinc-600 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider flex items-center gap-1.5 border border-zinc-200">
+                        <i class="ph-bold ph-scissors text-sm leading-none"></i>
+                        切開メニュー
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h2 class="text-[22px] font-bold leading-[1.3] tracking-tight mb-4">
+                    全切開法二重術<br>
+                    <span class="text-lg font-medium text-zinc-600 block mt-0.5">＋ まぶたの脂肪取り</span>
+                </h2>
+
+                <!-- Downtime Indicator -->
+                <div class="flex items-center gap-3 mb-5 border-l-2 border-zinc-300 pl-3">
+                    <span class="text-xs font-bold text-zinc-400">ダウンタイム</span>
+                    <div class="flex gap-1 flex-1 max-w-[120px]">
+                        <div class="h-1.5 rounded-full bg-zinc-300 flex-1 dt-segment"></div>
+                        <div class="h-1.5 rounded-full bg-zinc-300 flex-1 dt-segment"></div>
+                        <div class="h-1.5 rounded-full bg-brand-charcoal flex-1 dt-segment"></div>
+                    </div>
+                    <span class="text-[11px] font-bold text-brand-charcoal">長め</span>
+                </div>
+
+                <!-- Needs/Bullets Block -->
+                <div class="bg-zinc-50/80 squircle-inner p-4 mb-5 border border-zinc-100/50">
+                    <p class="text-[11px] font-bold text-zinc-400 mb-2 tracking-wider">こんな方におすすめ</p>
+                    <ul class="flex flex-col gap-2">
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-charcoal mt-0.5 shrink-0"></i>
+                            <span>半永久的に取れない二重を作りたい</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-charcoal mt-0.5 shrink-0"></i>
+                            <span>まぶたの脂肪が厚く、腫れぼったい</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-charcoal mt-0.5 shrink-0"></i>
+                            <span>過去に埋没法を受けたが取れてしまった</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Price Coupon Area -->
+            <div class="p-5 sm:p-6 pt-4 bg-white relative coupon-divider border-t border-dashed border-zinc-200">
+                <div class="absolute -top-4 right-4 sm:right-6 bg-brand-charcoal text-white font-en font-bold text-sm tracking-widest py-1.5 px-3 rounded-md shadow-lg transform rotate-2 border border-zinc-700 flex flex-col items-center leading-none">
+                    <span class="text-[10px] text-zinc-300 font-sans mb-0.5">モニター価格</span>
+                    <span class="text-brand-pink font-black text-base">50% <span class="text-xs">OFF</span></span>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="text-xs text-zinc-400 font-medium mb-1">通常価格 <span class="line-through font-en ml-1 tracking-wide">¥396,000</span></span>
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-en text-xl font-semibold text-brand-pink -translate-y-1">¥</span>
+                        <span class="font-en text-[40px] font-black tracking-tighter leading-none text-brand-charcoal">198,000</span>
+                        <span class="text-xs font-bold text-zinc-500 ml-1">（税込）</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- CARD 03: Thread Lift -->
+        <article class="animate-card relative bg-white squircle shadow-premium border border-zinc-100 overflow-hidden active:scale-[0.98] transition-transform duration-200" style="animation-delay: 300ms;">
+             <!-- Top Color Accent Bar -->
+             <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-pinkLight via-brand-pink to-brand-pinkLight opacity-80"></div>
+             
+            <div class="p-5 sm:p-6 pb-0">
+                <!-- Meta Row -->
+                <div class="flex justify-between items-center mb-3">
+                    <div class="font-en text-3xl font-bold text-zinc-200 tracking-tighter leading-none relative">
+                        <span class="absolute -top-1 -left-2 text-brand-pink/20 text-4xl">03</span>
+                        <span class="relative z-10 text-brand-charcoal">03</span>
+                    </div>
+                    <div class="bg-brand-pinkLight text-brand-pinkDark px-3 py-1 rounded-full text-[11px] font-bold tracking-wider flex items-center gap-1.5 border border-brand-pink/20">
+                        <i class="ph-fill ph-check-circle text-sm leading-none"></i>
+                        切らない
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h2 class="text-[22px] font-bold leading-[1.3] tracking-tight mb-4">
+                    スレッドリフト<br>
+                    <span class="text-lg font-medium text-zinc-600 block mt-0.5">（リフトアップ糸 10本）</span>
+                </h2>
+
+                <!-- Downtime Indicator -->
+                <div class="flex items-center gap-3 mb-5 border-l-2 border-brand-pink/60 pl-3">
+                    <span class="text-xs font-bold text-zinc-400">ダウンタイム</span>
+                    <div class="flex gap-1 flex-1 max-w-[120px]">
+                        <div class="h-1.5 rounded-full bg-brand-pink flex-1 dt-segment"></div>
+                        <div class="h-1.5 rounded-full bg-brand-pink/40 flex-1 dt-segment"></div>
+                        <div class="h-1.5 rounded-full bg-zinc-100 flex-1 dt-segment"></div>
+                    </div>
+                    <span class="text-[11px] font-bold text-zinc-600">普通</span>
+                </div>
+
+                <!-- Needs/Bullets Block -->
+                <div class="bg-zinc-50/80 squircle-inner p-4 mb-5 border border-zinc-100/50">
+                    <p class="text-[11px] font-bold text-zinc-400 mb-2 tracking-wider">こんな方におすすめ</p>
+                    <ul class="flex flex-col gap-2">
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-pink mt-0.5 shrink-0"></i>
+                            <span>フェイスラインのもたつきが気になる</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-pink mt-0.5 shrink-0"></i>
+                            <span>ほうれい線やマリオネットラインを薄くしたい</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-zinc-700 leading-snug">
+                            <i class="ph-bold ph-check text-brand-pink mt-0.5 shrink-0"></i>
+                            <span>周囲にバレずに自然に若返りたい</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Price Coupon Area -->
+            <div class="p-5 sm:p-6 pt-4 bg-white relative coupon-divider border-t border-dashed border-zinc-200">
+                <div class="absolute -top-4 right-4 sm:right-6 bg-brand-charcoal text-white font-en font-bold text-sm tracking-widest py-1.5 px-3 rounded-md shadow-lg transform rotate-2 border border-zinc-700 flex flex-col items-center leading-none">
+                    <span class="text-[10px] text-zinc-300 font-sans mb-0.5">モニター価格</span>
+                    <span class="text-brand-pink font-black text-base">50% <span class="text-xs">OFF</span></span>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="text-xs text-zinc-400 font-medium mb-1">通常価格 <span class="line-through font-en ml-1 tracking-wide">¥220,000</span></span>
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-en text-xl font-semibold text-brand-pink -translate-y-1">¥</span>
+                        <span class="font-en text-[40px] font-black tracking-tighter leading-none text-brand-charcoal">110,000</span>
+                        <span class="text-xs font-bold text-zinc-500 ml-1">（税込）</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Bottom padding for mobile scrolling -->
+        <div class="h-6"></div>
+
+    </main>
+</body>
+</html>
