@@ -1849,6 +1849,9 @@ p { margin: 0; }
   background: #fff;
   border-bottom: 1px solid rgba(247,141,167,0.15);
 }
+@media (min-width: 881px) {
+  .doctor-mini { display: none; }
+}
 .doctor-mini-inner {
   max-width: 680px;
   margin: 0 auto;
