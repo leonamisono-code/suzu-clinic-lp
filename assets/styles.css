@@ -524,41 +524,34 @@ p { margin: 0; }
 .worry-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 12px;
   max-width: 760px;
   margin: 0 auto;
 }
 .worry-list .item {
-  display: flex; align-items: flex-start; gap: 14px;
-  padding: 20px 22px;
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 22px;
   background: #fff;
-  border: 1px solid var(--line-soft);
-  border-left: 3px solid var(--pink-300);
-  border-radius: var(--r);
-  font-family: var(--serif);
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--ink-900);
-  transition: border-color .2s, box-shadow .2s;
+  border: 1px solid rgba(247,141,167,0.18);
+  border-radius: 12px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-800);
+  box-shadow: 0 2px 12px rgba(247,141,167,0.06);
+  transition: box-shadow .2s, transform .2s;
 }
 .worry-list .item:hover {
-  border-left-color: var(--pink-accent);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 6px 20px rgba(247,141,167,0.14);
+  transform: translateY(-1px);
 }
-.worry-list .item .check {
-  width: 26px; height: 26px; flex: none;
-  border-radius: 50%;
-  background: var(--pink-accent);
-  color: #fff;
-  display: inline-flex; align-items: center; justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 1px;
+.worry-list .item .check-icon {
+  width: 22px; height: 22px; flex-shrink: 0;
 }
 @media (max-width: 640px) {
   .worry-list { grid-template-columns: 1fr; gap: 10px; }
-  .worry-list .item { font-size: 15px; padding: 16px 18px; gap: 12px; }
+  .worry-list .item { font-size: 14px; padding: 15px 18px; gap: 12px; }
 }
 
 /* --- Treatment cards ------------------------------------- */
