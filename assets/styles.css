@@ -1895,6 +1895,7 @@ p { margin: 0; }
 @media (max-width: 880px) {
   .countdown-band { display: none; }
   .section.tight { display: none; }
+  .campaign-bar { display: none; }
   .tx-sp-wrap .px-4 { padding-top: 24px !important; padding-bottom: 24px !important; }
   .tx-sp-wrap .card-container { padding: 20px !important; }
   .tx-sp-wrap .mb-8 { margin-bottom: 20px !important; }
