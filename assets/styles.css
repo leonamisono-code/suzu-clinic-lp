@@ -1470,7 +1470,7 @@ p { margin: 0; }
 
 /* --- Campaign Notice Bar --------------------------------- */
 .campaign-bar {
-  background: linear-gradient(135deg, #c84e78 0%, var(--pink-accent) 55%, #7ecbbe 100%);
+  background: linear-gradient(135deg, #3A9480 0%, var(--pink-accent) 55%, #7ecbbe 100%);
   color: #fff;
   font-family: var(--serif);
   letter-spacing: 0.04em;
