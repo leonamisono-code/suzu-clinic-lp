@@ -23,11 +23,11 @@
 
   /* Surface */
   --bg:        #FFFFFF;
-  --bg-soft:   #FFF8FA;
+  --bg-soft:   #F5FDFB;
   --bg-pink:   #F0FAF8;
   --bg-warm:   #FBF6F2;
   --line:      #EEE3E6;
-  --line-soft: #F4ECEF;
+  --line-soft: #DCF0EC;
 
   /* Type */
   --serif: "Shippori Mincho", "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
