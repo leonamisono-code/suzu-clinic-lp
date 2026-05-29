@@ -282,7 +282,7 @@ p { margin: 0; }
   font-size: 15px;
   letter-spacing: 0.14em;
   font-weight: 500;
-  box-shadow: 0 8px 20px rgba(228, 122, 156, 0.28);
+  box-shadow: 0 8px 20px rgba(75, 175, 154, 0.28);
   transition: background .2s ease, transform .15s ease, box-shadow .15s ease;
   white-space: nowrap;
   position: relative;
@@ -297,7 +297,7 @@ p { margin: 0; }
   animation: banner-shimmer 3.5s ease-in-out infinite;
   animation-delay: 1s;
 }
-.cta:hover { background: var(--pink-600); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(228, 122, 156, 0.38); }
+.cta:hover { background: var(--pink-600); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(75, 175, 154, 0.38); }
 .cta .arrow {
   width: 26px; height: 26px;
   border: 1px solid rgba(255,255,255,0.4);
@@ -631,7 +631,7 @@ p { margin: 0; }
   letter-spacing: 0.08em;
   font-size: 13px;
   flex-direction: column;
-  box-shadow: 0 10px 22px rgba(228, 122, 156, 0.4);
+  box-shadow: 0 10px 22px rgba(75, 175, 154, 0.4);
 }
 .strength-card .num .n { font-size: 26px; line-height: 1; }
 .strength-card .num .l { font-size: 10px; letter-spacing: 0.2em; opacity: 0.9; }
