@@ -300,7 +300,6 @@ p { margin: 0; }
 .cta:hover { background: var(--pink-600); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(75, 175, 154, 0.38); }
 .cta .arrow {
   width: 26px; height: 26px;
-  border: 1px solid rgba(255,255,255,0.4);
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 13px;
   flex-shrink: 0;
