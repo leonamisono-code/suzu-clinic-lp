@@ -972,7 +972,7 @@ p { margin: 0; }
   margin-top: 32px;
   box-shadow: 0 16px 32px rgba(0,0,0,0.15);
 }
-.cta-band .cta .arrow { background: var(--pink-100); color: var(--pink-600); }
+.cta-band .cta .arrow { color: #fff; }
 @media (max-width: 640px) {
   .cta-band .cta {
     display: flex;
