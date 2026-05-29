@@ -5,14 +5,14 @@
 /* --- Tokens ---------------------------------------------- */
 :root {
   /* Pink palette */
-  --pink-50:  #FFF6F9;
-  --pink-100: #FDE9EF;
-  --pink-200: #F9D2DE;
-  --pink-300: #F4B3C6;
-  --pink-400: #ED90AE;
-  --pink-500: #E47A9C;  /* CTA */
-  --pink-600: #D86187;
-  --pink-accent: #ED7A9C; /* highlight in text */
+  --pink-50:  #F0FAF8;
+  --pink-100: #D9F2EE;
+  --pink-200: #B3E4DC;
+  --pink-300: #80CEC3;
+  --pink-400: #5AB5A0;
+  --pink-500: #4BAF9A;  /* CTA */
+  --pink-600: #3A9480;
+  --pink-accent: #5AB5A0; /* highlight in text */
 
   /* Ink */
   --ink-900: #2A2522;
@@ -24,7 +24,7 @@
   /* Surface */
   --bg:        #FFFFFF;
   --bg-soft:   #FFF8FA;
-  --bg-pink:   #FDF2F6;
+  --bg-pink:   #F0FAF8;
   --bg-warm:   #FBF6F2;
   --line:      #EEE3E6;
   --line-soft: #F4ECEF;
@@ -82,7 +82,7 @@ p { margin: 0; }
   position: sticky;
   top: 0;
   z-index: 60;
-  background: linear-gradient(90deg, #d86187 0%, var(--pink-accent) 50%, #f4a0bb 100%);
+  background: linear-gradient(90deg, #3a9480 0%, var(--pink-accent) 50%, #7ecbbe 100%);
   color: #fff;
   padding: 10px 16px;
   overflow: hidden;
@@ -532,18 +532,18 @@ p { margin: 0; }
   display: flex; align-items: center; gap: 14px;
   padding: 18px 22px;
   background: #fff;
-  border: 1px solid rgba(247,141,167,0.18);
+  border: 1px solid rgba(90,181,160,0.18);
   border-radius: 12px;
   font-family: var(--sans);
   font-size: 14.5px;
   font-weight: 500;
   line-height: 1.6;
   color: var(--ink-800);
-  box-shadow: 0 2px 12px rgba(247,141,167,0.06);
+  box-shadow: 0 2px 12px rgba(90,181,160,0.06);
   transition: box-shadow .2s, transform .2s;
 }
 .worry-list .item:hover {
-  box-shadow: 0 6px 20px rgba(247,141,167,0.14);
+  box-shadow: 0 6px 20px rgba(90,181,160,0.14);
   transform: translateY(-1px);
 }
 .worry-list .item .check-icon {
@@ -624,7 +624,7 @@ p { margin: 0; }
   position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
   width: 64px; height: 64px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #F4A0BB, #E47A9C);
+  background: linear-gradient(180deg, #7ECBBE, #4BAF9A);
   color: #fff;
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--serif);
@@ -687,7 +687,7 @@ p { margin: 0; }
 
 /* --- Campaign banner ------------------------------------- */
 .campaign {
-  background: linear-gradient(135deg, #FDE9EF 0%, #F9D2DE 100%);
+  background: linear-gradient(135deg, #D9F2EE 0%, #B3E4DC 100%);
   border-radius: var(--r-lg);
   padding: 36px 40px;
   display: grid;
@@ -946,7 +946,7 @@ p { margin: 0; }
 /* --- Footer CTA band ------------------------------------- */
 .cta-band {
   position: relative;
-  background: linear-gradient(135deg, #F4A0BB 0%, #E47A9C 60%, #D86187 100%);
+  background: linear-gradient(135deg, #7ECBBE 0%, #4BAF9A 60%, #3A9480 100%);
   color: #fff;
   padding: 80px 0;
   overflow: hidden;
@@ -1009,7 +1009,7 @@ p { margin: 0; }
 
 /* --- Countdown ------------------------------------------- */
 .countdown-band {
-  background: linear-gradient(135deg, #FDE9EF 0%, #F9D2DE 100%);
+  background: linear-gradient(135deg, #D9F2EE 0%, #B3E4DC 100%);
   padding: 36px 0;
   border-top: 1px solid var(--pink-200);
   border-bottom: 1px solid var(--pink-200);
@@ -1136,12 +1136,12 @@ p { margin: 0; }
 }
 .treat-menu-card--main::before {
   height: 5px;
-  background: linear-gradient(90deg, #d86187, var(--pink-accent), #f4a0bb);
+  background: linear-gradient(90deg, #3a9480, var(--pink-accent), #7ecbbe);
 }
 .treat-menu-rec {
   position: absolute;
   top: 5px; right: 18px;
-  background: linear-gradient(135deg, #d86187, var(--pink-accent));
+  background: linear-gradient(135deg, #3a9480, var(--pink-accent));
   color: #fff;
   font-family: var(--serif);
   font-size: 10px;
@@ -1250,7 +1250,7 @@ p { margin: 0; }
   flex-wrap: wrap;
 }
 .treat-off-badge {
-  background: linear-gradient(135deg, #d86187, var(--pink-accent));
+  background: linear-gradient(135deg, #3a9480, var(--pink-accent));
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -1285,7 +1285,7 @@ p { margin: 0; }
   z-index: 100;
   display: none;
 }
-.sticky-cta .cta { width: 100%; height: 58px; box-shadow: 0 16px 36px rgba(228,122,156,0.5); }
+.sticky-cta .cta { width: 100%; height: 58px; box-shadow: 0 16px 36px rgba(75,175,154,0.5); }
 @media (max-width: 880px) {
   .sticky-cta { display: block; }
   body { padding-bottom: 84px; }
@@ -1408,7 +1408,7 @@ p { margin: 0; }
 .shine-banner {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #f4a0bb 0%, var(--pink-accent) 50%, #d86187 100%);
+  background: linear-gradient(135deg, #7ecbbe 0%, var(--pink-accent) 50%, #3a9480 100%);
   padding: 28px 20px;
   text-align: center;
   box-shadow: 0 4px 24px rgba(237,122,156,0.4);
@@ -1471,7 +1471,7 @@ p { margin: 0; }
 
 /* --- Campaign Notice Bar --------------------------------- */
 .campaign-bar {
-  background: linear-gradient(135deg, #c84e78 0%, var(--pink-accent) 55%, #f4a0bb 100%);
+  background: linear-gradient(135deg, #c84e78 0%, var(--pink-accent) 55%, #7ecbbe 100%);
   color: #fff;
   font-family: var(--serif);
   letter-spacing: 0.04em;
@@ -1631,7 +1631,7 @@ p { margin: 0; }
 .tx-rec-banner {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #d86187 0%, var(--pink-accent) 60%, #f4a0bb 100%);
+  background: linear-gradient(90deg, #3a9480 0%, var(--pink-accent) 60%, #7ecbbe 100%);
   padding: 9px 0;
   text-align: center;
 }
@@ -1847,7 +1847,7 @@ p { margin: 0; }
 /* --- Doctor mini trust block ----------------------------- */
 .doctor-mini {
   background: #fff;
-  border-bottom: 1px solid rgba(247,141,167,0.15);
+  border-bottom: 1px solid rgba(90,181,160,0.15);
 }
 @media (min-width: 881px) {
   .doctor-mini { display: none; }
@@ -1866,7 +1866,7 @@ p { margin: 0; }
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 2px solid rgba(247,141,167,0.3);
+  border: 2px solid rgba(90,181,160,0.3);
 }
 .doctor-mini-photo image-slot,
 .doctor-mini-photo img {
@@ -1878,7 +1878,7 @@ p { margin: 0; }
 .doctor-mini-role {
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: var(--pink-accent, #f78da7);
+  color: var(--pink-accent, #5ab5a0);
   margin-bottom: 2px;
 }
 .doctor-mini-name {
