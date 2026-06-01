@@ -47,11 +47,10 @@
 /* --- Base ------------------------------------------------ */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { background: #b8cecc; }
 body {
   font-family: var(--sans);
   color: var(--ink-900);
-  background: transparent;
+  background: var(--bg);
   line-height: 1.75;
   font-feature-settings: "palt";
   -webkit-font-smoothing: antialiased;
@@ -1957,12 +1956,3 @@ p { margin: 0; }
   }
 }
 
-/* ===== Mobile-first LP wrapper: PC shows centered mobile width ===== */
-.lp-wrapper {
-  max-width: 430px;
-  margin: 0 auto;
-  background: #fff;
-  overflow-x: hidden;
-  min-height: 100vh;
-  box-shadow: 0 0 60px rgba(0,0,0,0.12);
-}
