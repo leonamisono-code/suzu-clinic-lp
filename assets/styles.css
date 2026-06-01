@@ -65,7 +65,7 @@ body {
 }
 .lp-wrapper {
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
   margin: 0 auto;
   background: #fff;
   min-height: 100vh;
@@ -1279,12 +1279,15 @@ p { margin: 0; }
 /* --- Sticky bottom CTA (mobile) -------------------------- */
 .sticky-cta {
   position: fixed;
-  left: 12px; right: 12px; bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 576px;
+  bottom: 12px;
   z-index: 100;
-  display: none;
+  display: block;
 }
 .sticky-cta .cta { width: 100%; height: 58px; box-shadow: 0 16px 36px rgba(75,175,154,0.5); }
-.sticky-cta { display: block; }
 body { padding-bottom: 84px; }
 
 
