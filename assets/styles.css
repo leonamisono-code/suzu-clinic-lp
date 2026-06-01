@@ -275,9 +275,11 @@ p { margin: 0; }
 
 /* --- Buttons --------------------------------------------- */
 .cta {
-  display: inline-flex; align-items: center; justify-content: center; gap: 16px;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-left: auto; margin-right: auto;
   height: 60px;
   padding: 0 36px 0 40px;
+  text-align: center;
   border-radius: var(--r-sm);
   background: var(--pink-accent);
   color: #fff;
