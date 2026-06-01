@@ -178,29 +178,25 @@ p { margin: 0; }
 }
 .top-banner-cta:hover { opacity: 0.85; }
 
-@media (max-width: 880px) {
-  .top-banner-text { display: none; }
-  .top-banner-inner { gap: 10px; }
+.top-banner-text { display: none; }
+.top-banner-inner { gap: 10px; }
+.top-banner { padding: 8px 12px 10px; }
+.top-banner-inner {
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
 }
-@media (max-width: 640px) {
-  .top-banner { padding: 8px 12px 10px; }
-  .top-banner-inner {
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
-  }
-  .top-banner-label { font-size: 13px; padding: 2px 10px; }
-  .top-banner-countdown { font-size: 13px; }
-  .top-banner-countdown .tb-seg { padding: 2px 5px; }
-  .top-banner-cta {
-    width: 100%;
-    text-align: center;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 20px;
-  }
-  .site-header { top: 72px; }
+.top-banner-label { font-size: 13px; padding: 2px 10px; }
+.top-banner-countdown { font-size: 13px; }
+.top-banner-countdown .tb-seg { padding: 2px 5px; }
+.top-banner-cta {
+  width: 100%;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
 }
+.site-header { top: 72px; }
 
 /* --- Header ---------------------------------------------- */
 .site-header {
@@ -1554,26 +1550,22 @@ p { margin: 0; }
   display: block;
 }
 .campaign-bar-cta:hover { opacity: 0.85; }
-@media (max-width: 880px) {
-  .campaign-bar-period { display: none; }
+.campaign-bar-period { display: none; }
+.campaign-bar-inner {
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 16px 16px;
+  align-items: stretch;
 }
-@media (max-width: 640px) {
-  .campaign-bar-inner {
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 16px 16px;
-    align-items: stretch;
-  }
-  .campaign-bar-top { justify-content: center; }
-  .campaign-bar-text { font-size: 15px; }
-  .campaign-bar-text strong { font-size: 17px; }
-  .campaign-bar-cta {
-    text-align: center;
-    padding: 11px 20px;
-    font-size: 14px;
-    border-radius: 25px;
-    animation: cta-pulse 2s ease-in-out infinite;
-  }
+.campaign-bar-top { justify-content: center; }
+.campaign-bar-text { font-size: 15px; }
+.campaign-bar-text strong { font-size: 17px; }
+.campaign-bar-cta {
+  text-align: center;
+  padding: 11px 20px;
+  font-size: 14px;
+  border-radius: 25px;
+  animation: cta-pulse 2s ease-in-out infinite;
 }
 
 /* --- Mobile improvements --------------------------------- */
