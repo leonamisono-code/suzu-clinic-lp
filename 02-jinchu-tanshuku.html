@@ -444,7 +444,8 @@
     <h2 style="font-family:'Shippori Mincho',serif; font-size:clamp(22px,4vw,32px); text-align:center; color:#2d2d2d; letter-spacing:0.12em; margin-bottom:8px;">ご予約・お問い合わせ</h2>
     <p style="font-family:'Noto Sans JP',sans-serif; font-size:13px; color:rgba(45,45,45,0.6); text-align:center; margin-bottom:40px; line-height:1.8;">カウンセリングは完全無料・予約不要・当日施術も可能です。<br>お気軽にご連絡ください。</p>
 
-    <form action="https://formspree.io/f/XXXXXXXX" method="POST" style="display:flex; flex-direction:column; gap:16px;">
+    <form action="https://formspree.io/f/xqejnokj" method="POST" style="display:flex; flex-direction:column; gap:16px;">
+      <input type="hidden" name="_next" value="https://formspree.io/thanks?language=ja" />
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
         <div>
           <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">お名前 <span style="color:#5AB5A0;">*</span></label>
@@ -473,24 +474,28 @@
         </select>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <div>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">第1希望日</label>
+      <div>
+        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">第1希望日・時間</label>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
           <input type="date" name="date1" style="width:100%; padding:12px 14px; border:1px solid #DCF0EC; border-radius:8px; font-size:14px; font-family:'Noto Sans JP',sans-serif; outline:none; box-sizing:border-box; background:#fff;" />
+          <input type="time" name="time1" style="width:100%; padding:12px 14px; border:1px solid #DCF0EC; border-radius:8px; font-size:14px; font-family:'Noto Sans JP',sans-serif; outline:none; box-sizing:border-box; background:#fff;" />
         </div>
-        <div>
-          <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">第2希望日</label>
+      </div>
+      <div>
+        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">第2希望日・時間</label>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
           <input type="date" name="date2" style="width:100%; padding:12px 14px; border:1px solid #DCF0EC; border-radius:8px; font-size:14px; font-family:'Noto Sans JP',sans-serif; outline:none; box-sizing:border-box; background:#fff;" />
+          <input type="time" name="time2" style="width:100%; padding:12px 14px; border:1px solid #DCF0EC; border-radius:8px; font-size:14px; font-family:'Noto Sans JP',sans-serif; outline:none; box-sizing:border-box; background:#fff;" />
         </div>
       </div>
 
       <div>
-        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">メッセージ・ご質問</label>
+        <label style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.7); display:block; margin-bottom:6px;">備考</label>
         <textarea name="message" rows="4" placeholder="気になることやご質問をご記入ください。" style="width:100%; padding:12px 14px; border:1px solid #DCF0EC; border-radius:8px; font-size:14px; font-family:'Noto Sans JP',sans-serif; outline:none; box-sizing:border-box; background:#fff; resize:vertical;"></textarea>
       </div>
 
       <button type="submit" style="width:100%; padding:16px; background:#4BAF9A; color:#fff; border:none; border-radius:99px; font-family:'Noto Sans JP',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; cursor:pointer; margin-top:8px;">送信する</button>
-      <p style="font-family:'Noto Sans JP',sans-serif; font-size:11px; color:rgba(45,45,45,0.5); text-align:center; line-height:1.7;">送信後、2営業日以内にご連絡いたします。<br>お急ぎの場合はお電話（082-222-6671）にてご連絡ください。</p>
+      <p style="font-family:'Noto Sans JP',sans-serif; font-size:11px; color:rgba(45,45,45,0.5); text-align:center; line-height:1.7;">お急ぎの場合はお電話（082-222-6671）にてご連絡ください。</p>
     </form>
   </div>
 </section>
