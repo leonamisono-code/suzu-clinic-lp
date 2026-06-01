@@ -65,7 +65,7 @@ body {
 }
 .lp-wrapper {
   width: 100%;
-  max-width: 430px;
+  max-width: 480px;
   margin: 0 auto;
   background: #fff;
   min-height: 100vh;
@@ -189,10 +189,10 @@ p { margin: 0; }
 .top-banner-countdown { font-size: 13px; }
 .top-banner-countdown .tb-seg { padding: 2px 5px; }
 .top-banner-cta {
-  width: 100%;
+  width: auto;
   text-align: center;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 5px 14px;
+  font-size: 13px;
   border-radius: 20px;
 }
 .site-header { top: 72px; }
