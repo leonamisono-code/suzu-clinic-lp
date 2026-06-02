@@ -47,13 +47,7 @@
 /* --- Base ------------------------------------------------ */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html {
-  background:
-    radial-gradient(circle at 15% 20%, rgba(90,181,160,0.28), transparent 38%),
-    radial-gradient(circle at 85% 75%, rgba(90,181,160,0.18), transparent 32%),
-    linear-gradient(135deg, #cce8e3 0%, #f0faf8 50%, #d8edea 100%);
-  background-attachment: fixed;
-}
+/* html background set per-LP via inline style */
 body {
   font-family: var(--sans);
   color: var(--ink-900);
