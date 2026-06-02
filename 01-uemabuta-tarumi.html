@@ -607,8 +607,11 @@
     <h2 style="font-family:'Shippori Mincho',serif; font-size:clamp(22px,4vw,32px); text-align:center; color:#2d2d2d; letter-spacing:0.12em; margin-bottom:8px;">ご予約・お問い合わせ</h2>
     <p style="font-family:'Noto Sans JP',sans-serif; font-size:13px; color:rgba(45,45,45,0.6); text-align:center; margin-bottom:40px; line-height:1.8;">カウンセリングは完全無料・予約不要・当日施術も可能です。<br>お気軽にご連絡ください。</p>
 
-    <form action="send_mail.php" method="POST" style="display:flex; flex-direction:column; gap:16px;">
-      <input type="hidden" name="_next" value="https://formspree.io/thanks?language=ja" />
+    <form id="reservation-form" action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:16px;">
+      <input type="hidden" name="access_key" value="c7ee535a-5927-47c0-ad59-0471a67e18ac" />
+      <input type="hidden" name="subject" value="【予約お申し込み】すず美容形成外科医院（上まぶたたるみ取り）" />
+      <input type="hidden" name="cc" value="osamu.morishima@grill.co.jp" />
+      <input type="hidden" name="botcheck" value="" />
 
       <!-- お名前・フリガナ -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
@@ -737,8 +740,40 @@
       <button type="submit" style="width:100%; padding:16px; background:#4BAF9A; color:#fff; border:none; border-radius:99px; font-family:'Noto Sans JP',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.1em; cursor:pointer; margin-top:8px; text-align:center;">送信する</button>
       <p style="font-family:'Noto Sans JP',sans-serif; font-size:12px; color:rgba(45,45,45,0.5); text-align:center; line-height:1.9; margin-top:8px;">お急ぎの場合はお電話（082-222-6671）にてご連絡ください。<br><br>※受診の際は公的身分証（運転免許証、マイナンバーカード、パスポートなど）をご持参ください。<br>持参されない場合は診察をお断りする場合があります。予めご了承くださいませ。</p>
     </form>
+
+    <!-- サンクスメッセージ -->
+    <div id="thank-you-message" style="display:none; text-align:center; padding:48px 20px;">
+      <div style="width:64px; height:64px; background:rgba(90,181,160,0.12); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px;">
+        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="#5ab5a0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 style="font-family:'Shippori Mincho',serif; font-size:22px; color:#2d2d2d; letter-spacing:0.1em; margin-bottom:16px;">ご予約を受け付けました</h3>
+      <p style="font-family:'Noto Sans JP',sans-serif; font-size:14px; color:rgba(45,45,45,0.65); line-height:1.9;">ご登録いただいたメールアドレスに確認メールをお送りしました。<br>担当者より改めてご連絡差し上げます。</p>
+      <p style="font-family:'Noto Sans JP',sans-serif; font-size:13px; color:rgba(45,45,45,0.5); margin-top:20px;">お急ぎの場合はお電話（082-222-6671）にてご連絡ください。</p>
+    </div>
+
   </div>
 </section>
+
+<script>
+  document.getElementById('reservation-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var data = new FormData(form);
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      .then(function(res) { return res.json(); })
+      .then(function(json) {
+        if (json.success) {
+          form.style.display = 'none';
+          document.getElementById('thank-you-message').style.display = 'block';
+        } else {
+          alert('送信に失敗しました。お電話（082-222-6671）にてご連絡ください。');
+        }
+      })
+      .catch(function() {
+        alert('送信に失敗しました。お電話（082-222-6671）にてご連絡ください。');
+      });
+  });
+</script>
 
 <!-- ============== Footer ============== -->
 <footer class="site-footer">
