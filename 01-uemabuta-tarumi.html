@@ -786,8 +786,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <script>
-  // 最短予約日（今日+3日）・休診日（日・月）制御
+  // 最短予約日（今日+3日）・休診日（日・月・祝日）制御
   (function() {
+    var holidays2026 = [
+      '2026-01-01','2026-01-12','2026-02-11','2026-02-23',
+      '2026-03-20','2026-04-29','2026-05-03','2026-05-04',
+      '2026-05-05','2026-05-06','2026-07-20','2026-08-11',
+      '2026-09-21','2026-09-22','2026-09-23','2026-10-12',
+      '2026-11-03','2026-11-23'
+    ];
+    function isHoliday(str) { return holidays2026.indexOf(str) !== -1; }
+
     var today = new Date();
     today.setHours(0,0,0,0);
     var minDate = new Date(today);
@@ -805,8 +814,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var parts = e.target.value.split('-');
       if (parts.length < 3) return;
       var day = new Date(parts[0], parts[1] - 1, parts[2]).getDay();
-      if (day === 0 || day === 1) {
-        alert('日曜・月曜は休診日のため選択できません。別の日程をお選びください。');
+      if (day === 0 || day === 1 || isHoliday(e.target.value)) {
+        alert('休診日（日曜・月曜・祝日）のため選択できません。別の日程をお選びください。');
         e.target.value = '';
       }
     });
