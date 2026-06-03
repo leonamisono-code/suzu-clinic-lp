@@ -463,12 +463,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 style="font-family:'Shippori Mincho',serif; font-size:clamp(22px,4vw,32px); text-align:center; color:#2d2d2d; letter-spacing:0.12em; margin-bottom:8px;">ご予約・お問い合わせ</h2>
     <p style="font-family:'Noto Sans JP',sans-serif; font-size:13px; color:rgba(45,45,45,0.6); text-align:center; margin-bottom:40px; line-height:1.8;">カウンセリングは完全無料・契約不要です。<br>お気軽にご連絡ください。</p>
 
-    <form id="reservation-form" action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:16px;">
-      <input type="hidden" name="access_key" value="c7ee535a-5927-47c0-ad59-0471a67e18ac" />
-      <input type="hidden" name="subject" value="LP◎【予約お申し込み】すず美容形成外科医院" />
-      <input type="hidden" name="from_name" value="すず美容形成外科医院" />
-      <input type="hidden" name="cc" value="marketing.beauty@grill.co.jp" />
-      <input type="hidden" name="botcheck" value="" />
+    <form id="reservation-form" style="display:flex; flex-direction:column; gap:16px;">
+      <input type="hidden" name="lp_type" value="LP②人中短縮" />
 
       <!-- お名前・フリガナ -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
@@ -678,7 +674,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.disabled = true;
     btn.textContent = '送信中...';
     var data = new FormData(form);
-    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+    var concerns = data.getAll('concern');
+    var payload = {
+      name: data.get('name'),
+      furigana: data.get('furigana'),
+      phone: data.get('phone'),
+      email: data.get('email'),
+      contact_time: data.get('contact_time'),
+      gender: data.get('gender'),
+      age: data.get('age'),
+      concern: concerns,
+      same_day: data.get('same_day'),
+      visited: data.get('visited'),
+      date1: data.get('date1'),
+      time1: data.get('time1'),
+      date2: data.get('date2'),
+      time2: data.get('time2'),
+      date3: data.get('date3'),
+      time3: data.get('time3'),
+      message: data.get('message'),
+      lp_type: data.get('lp_type')
+    };
+    fetch('/.netlify/functions/send-reservation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
       .then(function(res) { return res.json(); })
       .then(function(json) {
         if (json.success) {
