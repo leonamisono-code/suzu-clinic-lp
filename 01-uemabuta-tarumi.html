@@ -621,7 +621,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <form id="reservation-form" action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:16px;">
       <input type="hidden" name="access_key" value="c7ee535a-5927-47c0-ad59-0471a67e18ac" />
-      <input type="hidden" name="subject" value="【予約お申し込み】すず美容形成外科医院（上まぶたたるみ取り）" />
+      <input type="hidden" name="subject" value="LP◎【予約お申し込み】すず美容形成外科医院" />
+      <input type="hidden" name="from_name" value="すず美容形成外科医院" />
       <input type="hidden" name="cc" value="marketing.beauty@grill.co.jp" />
       <input type="hidden" name="botcheck" value="" />
 
@@ -785,22 +786,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <script>
+  // 最短予約日（今日+3日）・休診日（日・月）制御
+  (function() {
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    var minDate = new Date(today);
+    minDate.setDate(minDate.getDate() + 3);
+    var y = minDate.getFullYear();
+    var m = ('0' + (minDate.getMonth() + 1)).slice(-2);
+    var d = ('0' + minDate.getDate()).slice(-2);
+    var minStr = y + '-' + m + '-' + d;
+    ['date1','date2','date3'].forEach(function(n) {
+      var el = document.querySelector('input[name="' + n + '"]');
+      if (el) el.min = minStr;
+    });
+    document.addEventListener('change', function(e) {
+      if (!e.target.name || !['date1','date2','date3'].includes(e.target.name)) return;
+      var parts = e.target.value.split('-');
+      if (parts.length < 3) return;
+      var day = new Date(parts[0], parts[1] - 1, parts[2]).getDay();
+      if (day === 0 || day === 1) {
+        alert('日曜・月曜は休診日のため選択できません。別の日程をお選びください。');
+        e.target.value = '';
+      }
+    });
+  })();
+
+  // フォーム送信 → /thanks/ へリダイレクト
   document.getElementById('reservation-form').addEventListener('submit', function(e) {
     e.preventDefault();
     var form = this;
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = '送信中...';
     var data = new FormData(form);
     fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       .then(function(res) { return res.json(); })
       .then(function(json) {
         if (json.success) {
-          form.style.display = 'none';
-          document.getElementById('thank-you-message').style.display = 'block';
+          window.location.href = '/thanks/';
         } else {
           alert('送信に失敗しました。お電話（082-222-6671）にてご連絡ください。');
+          btn.disabled = false;
+          btn.textContent = '送信する';
         }
       })
       .catch(function() {
         alert('送信に失敗しました。お電話（082-222-6671）にてご連絡ください。');
+        btn.disabled = false;
+        btn.textContent = '送信する';
       });
   });
 </script>
